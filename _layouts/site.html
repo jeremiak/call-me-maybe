@@ -8,9 +8,9 @@ layout: default
 
 <pre><code>&lt;script&gt;
   window.cmm = {
-    id: {{ page.site }},
+    id: "{{ page.site }}",
     roles: {{ page.roles | jsonify }},
     showPercentage: {{ page.showPercentage }}
   };
 &lt;/script&gt;
-&lt;script src="{{ site.url }}/js/bundle.js"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="{{ site.url }}{{ site.baseurl }}/js/bundle.js"&gt;&lt;/script&gt;</code></pre>
