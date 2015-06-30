@@ -10,7 +10,7 @@ layout: default
   window.cmm = {
     id: "{{ page.site }}",
     roles: {{ page.roles | jsonify }},
-    showPercentage: {{ page.showPercentage }}
+    showPercentage: {{ page.showPercentage }} // this can be any integer between 0 and 100
   };
 &lt;/script&gt;
 &lt;script src="{{ site.url }}{{ site.baseurl }}/js/bundle.js"&gt;&lt;/script&gt;</code></pre>
