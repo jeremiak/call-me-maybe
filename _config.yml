@@ -1,0 +1,8 @@
+# Site settings
+title: "Call me, maybe"
+description: "makes research easier, maybe"
+baseurl: "/call-me-maybe" # the subpath of your site, e.g. /blog/
+url: "http://localhost" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown

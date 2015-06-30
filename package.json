@@ -1,0 +1,28 @@
+{
+  "name": "six-degrees",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify -d -t brfs js/index.js -o js/bundle.js",
+    "watch": "watchify -d -t brfs js/index.js -o js/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremiak/call-me-maybe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremiak/call-me-maybe/issues"
+  },
+  "homepage": "https://github.com/jeremiak/call-me-maybe",
+  "dependencies": {
+    "brfs": "^1.4.0",
+    "browserify": "^10.2.4",
+    "lodash": "^3.9.3",
+    "watchify": "^3.2.3",
+    "xhr": "^2.0.2"
+  }
+}

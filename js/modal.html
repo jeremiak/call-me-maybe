@@ -1,0 +1,16 @@
+<div id="ccm-modal" style="background-color: rebeccapurple; position: absolute; top: 25%; bottom: 25%; left: 25%; right: 25%;">
+  <a href="#" id="ccm-close">Close</a>
+  <form style="padding: 3em;">
+    <input type="hidden" id="ccm-id" value="<%= id %>"></input>
+    <label>Hi, my name is <input type="text" id="ccm-name"></input></label>
+    <label> and I am a
+      <select id="ccm-role">
+        <% roles.forEach(function(role) { %>
+          <option value="<%= role %>"><%= role %></option>
+        <% }); %>
+      </select>.
+    </label>
+    <label> My email is <input type="email" id="ccm-email"></input></label>
+    <button id="ccm-submit">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<h1>{{ page.site }}</h1>
+
+<p>You should use this snippet:</p>
+
+<pre><code>&lt;script&gt;
+  window.cmm = {
+    id: {{ page.site }},
+    roles: {{ page.roles | jsonify }},
+    showPercentage: {{ page.showPercentage }}
+  };
+&lt;/script&gt;
+&lt;script src="{{ site.url }}/js/bundle.js"&gt;&lt;/script&gt;</code></pre>
