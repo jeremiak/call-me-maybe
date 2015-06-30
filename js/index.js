@@ -52,18 +52,13 @@ function onSubmit(e) {
     return key + '=' + data[key];
   }).join('&');
 
-  console.log('formEncoded', formEncoded);
-
   var requestData = {
     method: 'GET',
     uri: requestUrl + '?' + formEncoded
   };
 
-  console.log('requestData', requestData);
-
-  xhr(requestData, function(e, r, b) {
-    console.log('e', e);
-    console.log('r', r);
+  xhr(requestData, function(err, r, b) {
+    if (!err) { onClose(e); }
   });
 }
 
