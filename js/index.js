@@ -7,25 +7,24 @@ var _ = {
 
 var requestUrl = 'http://crossorigin.me/http://docs.google.com/forms/d/1PKyhJ1D06Gh-1ZE5bY4alYpLm6-GQxglJ-4xaSHjXdE/formResponse';
 var html = _.template(fs.readFileSync(__dirname + '/modal.html').toString());
+var css = fs.readFileSync(__dirname + '/modal.css').toString();
 
 var id = window.cmm.id || 'noId';
 var roles = window.cmm.roles || ['visitor'];
 var showPercentage = window.cmm.showPercentage || 0;
 
-var modal = document.createElement('div');
-modal.style.setProperty('position', 'fixed');
-modal.style.setProperty('top', '0');
-modal.style.setProperty('margin', '0');
-modal.style.setProperty('padding', '0');
-modal.style.setProperty('background-color', 'rgba(0,0,0,0.4)');
-modal.style.setProperty('width', window.innerWidth + 'px');
-modal.style.setProperty('min-height', window.innerHeight + 'px');
+var modalStyle = document.createElement('style');
+modalStyle.id = "ccm-style";
+modalStyle.innerText = css;
 
+var modal = document.createElement('div');
+modal.className = 'ccm-modal-wrapper';
 modal.innerHTML = html({ id: id, roles: roles });
 modal.querySelector('button').addEventListener('click', onSubmit);
 modal.querySelector('#ccm-close').addEventListener('click', onClose);
 
 if (Math.floor(Math.random()*101) < showPercentage) {
+  document.querySelector('body').appendChild(modalStyle);
   document.querySelector('body').appendChild(modal);
 }
 
@@ -33,6 +32,7 @@ function onSubmit(e) {
   e.preventDefault();
   e.stopPropagation();
 
+  // mapping to google form fields
   var m = {
     id: 'entry.336978155',
     name: 'entry.848398114',
@@ -46,7 +46,7 @@ function onSubmit(e) {
   data[m['name']] = form.querySelector('#ccm-name').value;
   data[m['role']] = form.querySelector('#ccm-role').value;
   data[m['email']] = form.querySelector('#ccm-email').value;
-  data['fbzx'] = '3474659780927381613';
+  data['fbzx'] = '3474659780927381613'; // google form hidden value
 
   var formEncoded = Object.keys(data).map(function(key) {
     return key + '=' + data[key];
