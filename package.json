@@ -1,18 +1,20 @@
 {
-  "name": "six-degrees",
+  "name": "call-me-maybe",
   "version": "1.0.0",
-  "description": "",
+  "description": "easily configurable, quick js embed to solicit involvement in user research",
   "main": "index.js",
   "scripts": {
+    "start": "npm run watch & npm run jekyll",
     "build": "browserify -d -t brfs js/index.js -o js/bundle.js",
     "watch": "watchify -d -t brfs js/index.js -o js/bundle.js",
+    "jekyll": "bundle exec jekyll serve --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/jeremiak/call-me-maybe.git"
   },
-  "author": "",
+  "author": "jeremiak",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jeremiak/call-me-maybe/issues"
