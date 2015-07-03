@@ -40,7 +40,7 @@ function onSubmit(e) {
     email: 'entry.147270097'
   };
 
-  var form = document.querySelector('#ccm-modal form');
+  var form = document.querySelector('.ccm-modal form');
   var data = {};
   data[m['id']] = form.querySelector('#ccm-id').value;
   data[m['name']] = form.querySelector('#ccm-name').value;
