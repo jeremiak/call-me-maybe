@@ -1,16 +1,39 @@
 <div class="ccm-modal">
-  <a href="#" id="ccm-close">Close</a>
-  <form style="padding: 3em;">
+  <header>
+    <h1>Do you have a few minutes for paid research?</h1>
+    <p>Earn $75 at Amazon.com</p>
+    <a href="#" id="ccm-close"><span>Close</span></a>    
+  </header>
+  <p>Hi! We&rsquo;re looking for people to participate in a 30 minute phone interview about how they use FEC.gov. If selected, we&rsquo;ll contact you to setup a time.</p>
+  <form>
     <input type="hidden" id="ccm-id" value="<%= id %>"></input>
-    <label>Hi, my name is <input type="text" id="ccm-name"></input></label>
-    <label> and I am a
-      <select id="ccm-role">
-        <% roles.forEach(function(role) { %>
-          <option value="<%= role %>"><%= role %></option>
-        <% }); %>
-      </select>.
-    </label>
-    <label> My email is <input type="email" id="ccm-email"></input></label>
-    <button id="ccm-submit">Submit</button>
+    <span>Hi, my name is </span>
+    <div class="field field-name">
+      <label for="ccm-name">
+        <span class="label-text">Name</span>
+        <input type="text" id="ccm-name" />
+      </label>    
+    </div>
+    <span>and I am a</span>
+    <div class="field field-select field-role">
+      <label for="ccm-role">
+        <span class="label-text">Role</span>
+        <select id="ccm-role">
+          <% roles.forEach(function(role) { %>
+            <option value="<%= role %>"><%= role %></option>
+          <% }); %>
+        </select>.
+      </label>    
+    </div>
+    <span>My email is </span>
+    <div class="field field-email">
+      <label for="ccm-email">
+        <span class="label-text">Email</span>
+        <input type="email" id="ccm-email"></input>
+      </label>      
+    </div>
+    <footer>
+      <button id="ccm-submit">Submit</button>      
+    </footer>
   </form>
 </div>
