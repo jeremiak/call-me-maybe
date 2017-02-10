@@ -2,6 +2,8 @@
 
 A quick prototype for a research tool concept.
 
+**NOTE**: The next iteration was done by @andrewmaier at [18f/call-me-maybe](https://github.com/18F/call-me-maybe)
+
 ## Demo
 
 [Here is an example of a page with the embedded script](https://jeremiak.github.io/call-me-maybe/demo.html) and the [resulting data store aka Google Doc](https://docs.google.com/spreadsheets/d/1uov31VpYtkCzLF0eFz6FVdC7y-JjcrX0sWTWE0ZunD8/edit#gid=1073603305).
